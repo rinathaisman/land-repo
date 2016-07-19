@@ -51,16 +51,7 @@
 	<!-- RESPONSIVE CSS  -->
 	<link rel="stylesheet" href="css/responsive.css">
 	
-	<!-- COLORS CSS  -->
-	<link rel="stylesheet" href="css/colors/1.css" title="color-1">
-	
-	<!--<link rel="stylesheet" href="css/colors/2.css" title="color-2">
-	<link rel="stylesheet" href="css/colors/3.css" title="color-3">
-	<link rel="stylesheet" href="css/colors/4.css" title="color-4">
-	<link rel="stylesheet" href="css/colors/5.css" title="color-5">
-	<link rel="stylesheet" href="css/colors/6.css" title="color-6">
-	<link rel="stylesheet" href="css/colors/7.css" title="color-7">
-	
+
 	<!-- GOOGLE WEB FONT  -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	
@@ -73,86 +64,6 @@
 		
 	<!-- STYLE SWITCH STYLESHEET ONLY FOR DEMO -->
 	<link rel="stylesheet" href="demo/css/demo.css">
-	<!-- Chatra {literal} -->
-	<script>
-window.ChatraSetup = {
-    colors: {
-        buttonText: '#ffffff', // цвет текста кнопки чата
-        buttonBg: '#3F51B5', // цвет фона кнопки чата
-    }
-};
-</script>
-<script>
-    ChatraID = 'PeW9oy2kewZfECg9c';
-    (function(d, w, c) {
-        var n = d.getElementsByTagName('script')[0],
-            s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        s.async = true;
-        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
-            + '//call.chatra.io/chatra.js';
-        n.parentNode.insertBefore(s, n);
-    })(document, window, 'Chatra');
-</script>
-<!-- /Chatra {/literal} -->
-
-<!-- Скрипт модального окна -->
-<script>
-	$(document).ready(function(){
-
-	// pass the YouTube video ID into the iframe template on click/tap
-	$('a.video-thumb').click(function () {
-		
-		// Grab the video ID from the element clicked
-		var id = $(this).attr('data-youtube-id');
-
-		// Autoplay when the modal appears
-		// Note: this is intetnionally disabled on most mobile devices
-		// If critical on mobile, then we need to brainstorm a way, or not use YouTube?
-		var autoplay = '?autoplay=1';
-		
-		// Don't show the 'Related Videos' when the video ends
-		var related_no = '&rel=0';
-		
-		// String the ID and param variables together
-		var src = '//www.youtube.com/embed/'+id+autoplay+related_no;
-		
-		// Set the source on the iframe template inside the video modal
-		$("#youtube").attr('src', src);
-		return false;
-	
-	});
-
-
-	/* Modal View
-	-------------------------------------------------------------------------------*/
-	function toggle_video_modal() {
-	    
-	    // Open the Video Modal
-	    $(".js-trigger-modal").on("click", function(event){
-	        event.preventDefault();
-	        $("body").addClass("show-video-modal");
-	    });
-
-	    // Close and Reset the Video Modal
-	    $('body').on('click', '.close-video-modal, .video-modal .overlay', function(event) {
-	        event.preventDefault();
-	        
-	        $("body").removeClass("show-video-modal");
-			
-	        // reset the source attribute for the iframe template - kills the video
-			$("#youtube").attr('src', '');
-	    });
-	}
-	toggle_video_modal();
-
-
-
-});
-	</script>
-	<!-- /Скрипт модального окно завершен -->
 </head>
 
 <body id="ip-container">
@@ -321,7 +232,7 @@ window.ChatraSetup = {
 					<div class="video-section-text">
 						<h3 class="wow fadeInUp" data-wow-offset="10" data-wow-duration="1.5s">Наиболее эффективным инструментом маркетинга является landing page</h3>
 						<p class="wow fadeInUp" data-wow-offset="10" data-wow-duration="1.5s">Благодаря профессиональному дизайну и ярким акцентам на преимуществах, наши целевые страницы привлекают внимание пользователя к самым притягательным характеристикам продукта, мотивируют к быстрым действиям. Вы получаете готовый инструмент для продаж и продвижения вашей продукции в сети.</p>
-						<a class=" video-thumb js-trigger-modal wow fadeIn" data-wow-offset="10" data-wow-duration="1.5s" href="https://www.youtube.com/watch?v=mEerHnJmKnQ" data-youtube-id="mEerHnJmKnQ" >посмотреть видео</a>
+						<a class=" video-thumb js-trigger-modal wow fadeIn" data-wow-offset="10" data-wow-duration="1.5s" data-youtube-id="mEerHnJmKnQ" href="https://www.youtube.com/watch?v=mEerHnJmKnQ"  >посмотреть видео</a>
 					</div>
 					
 					
@@ -332,12 +243,44 @@ window.ChatraSetup = {
 					<!-- VIDEO CONTAINER  -->
 					<div class="video-container">
 						<div class="video-bg wow fadeIn" data-wow-offset="10" data-wow-duration="1.5s">
-							<a href="https://www.youtube.com/watch?v=mEerHnJmKnQ" class="prettyPhoto"><img src="../img/icons/video-icon.png" alt="" /></a>
+							<a href="https://www.youtube.com/watch?v=mEerHnJmKnQ" class="prettyPhoto video-thumb js-trigger-modal" data-youtube-id="mEerHnJmKnQ"><img src="../img/icons/video-icon.png" alt="" /></a>
 						</div>
 					</div>
 					
 				</div>
-				
+					<section class="video-modal">
+
+    <!-- Modal Content Wrapper -->
+    <div id="video-modal-content" class="video-modal-content">
+      
+       <img 
+            class="video-sizer"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABaAQAAAAAXvWD/AAAAAnRSTlMAAHaTzTgAAAAWSURBVHgBY6ABGAWjYBSMglEwCkYBAAdiAAFufS70AAAAAElFTkSuQmCC"
+       />
+        
+       <iframe 
+         id="youtube" 
+         width="100%" 
+         height="100%" 
+         frameborder="0"
+         src="https://www.youtube.com/embed/mEerHnJmKnQ"
+         ></iframe>
+
+        <a 
+        	href="#" 
+        	class="close-video-modal" 
+        >
+            <img src="/img/icons/close_icon.png" alt="Close video" />
+        </a>
+
+    </div><!-- end modal content wrapper -->
+
+
+    <!-- Overlay Element -->
+    <div class="overlay"></div>
+
+
+</section>
 			</div>
 		</div>
 	</section>
@@ -1194,26 +1137,19 @@ window.ChatraSetup = {
 	<!-- SCROLL TO TOP JS  -->
 	<script src="js/jquery.scrollUp.min.js"></script>
 	
-	<!-- RETINA JS  -->
-	<script src="js/retina.js"></script>
-	
 	<!-- WOW JS  -->
 	<script src="js/wow.min.js"></script>
-	
-	<!-- CLASSIE FOR PRELOADER JS  -->
-	<script src="js/classie.js"></script>
-	
-	<!-- PRELOADER PATH JS  -->
-	<script src="js/pathLoader.js"></script>
-	
-	<!-- PRELOADER JS  -->
-	<script src="js/preloader.js"></script>
-	
-	<!-- CUSTOM JS  -->
-	<script src="js/scripts.js"></script>
+
 	<!-- FULLSCREEN HEADER  -->
 	<script src="js/jquery.superslides.js"></script>
-		
+    
+    <!--VIDEO IN MODAL WINDOW-->
+    <script src="http://assets.codepen.io/assets/common/stopExecutionOnTimeout-ddaa1eeb67d762ab8aad46508017908c.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    <!--COMMON SCRIPT-->
+    <script type="text/javascript" src="js/cast.js"></script>
+    
 	<!--
 
 	STYLE SWITCHER | ONLY FOR DEMO NOT INCLUDED IN MAIN FILES
