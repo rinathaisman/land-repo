@@ -1916,8 +1916,6 @@ COLOR CODE:  #0cb4ce
 
 /*VIDEO MODAL WINDOW*/
 
-/* Video Modal - Theater Mode
--------------------------------------------------------------------------------*/
 .video-modal,
 .video-modal .overlay {
     position: absolute;
@@ -1966,9 +1964,8 @@ COLOR CODE:  #0cb4ce
 }
 .video-modal .overlay {
     z-index: 0;
-    background: rgba(128, 128, 128, 0.80); /* dark blue */
-    opacity: 0.0;
-
+   background: linear-gradient(to top, rgba(16, 218, 248, 0.7) 0%, rgba(0, 133, 230, 1) 100%); /* dark blue */
+    opacity: 0.5;
     -webkit-transition: opacity 0.2s ease-out 0.05s;
     transition: opacity 0.2s ease-out 0.05s;
 }
@@ -1992,24 +1989,45 @@ COLOR CODE:  #0cb4ce
 
 
 }
-/* Mobile Layout Tweaks */
-@media (max-width: 640px) {
-	.video-modal-content {
-		width: calc(100% - 16px);
-	}
-}
 
 /* close button */
 .close-video-modal {
 	display: block;
     position: absolute;
-    right: -5%;
-    top: -10%;
+  overflow: visible;
+  width: 55px;
+  height: 55px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  text-decoration: none;
+  color: white;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  top: -7%;
+  right: 0;
 
-
-
-    /*border: 2px solid red;*/
 }
+.close-video-modal:hover{
+    color: white;
+}
+.close-video-modal:before{
+  font-size: 180%;
+  line-height: 1;
+  position: absolute;
+ border: 1px solid white;
+    border-radius: 50%;
+  display: block;
+  width: 90%;
+    height: 90%;
+  content: "\00d7";
+  text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
 
 /* using a 16:9 image to resize the video frame */
 .video-sizer {
@@ -2021,12 +2039,11 @@ COLOR CODE:  #0cb4ce
 /* set the iframe element to stretch to fit its parent element */
 iframe#youtube {
 	position: absolute;
-	top: 0;
+	top: 5%;
 	right: 0;
 	bottom: 0;
 	left: 0;
 	z-index: 1;
-
 	background: #fff;
 	box-shadow: 0px 2px 16px rgba(0,0,0,0.5);
 }
@@ -2045,4 +2062,70 @@ iframe#youtube {
 .show-video-modal .video-modal-content {
 	transform: translate(0%,0%);
 	-webkit-transform: translate(0%,0%);
+}
+
+
+
+/* Mobile Layout Tweaks */
+@media (max-width: 980px) {
+.close-video-modal {
+  width: 45px;
+  height: 45px;
+  top: -7%;
+  right: 0;
+
+}
+.close-video-modal:before{
+  font-size: 160%;
+  line-height: 0.9;
+}
+}
+@media (max-width: 850px) {
+.close-video-modal {
+  width: 45px;
+  height: 45px;
+  top: -10%;
+  right: 0;
+
+}
+}
+@media (max-width: 730px) {
+.close-video-modal {
+  width: 45px;
+  height: 45px;
+  top: -12%;
+  right: 0;
+
+}
+}
+@media (max-width: 480px) {
+.close-video-modal {
+  width: 40px;
+  height: 40px;
+  top: -14%;
+  right: 0;
+
+}
+.close-video-modal:before{
+  font-size: 140%;
+  line-height: 0.8;
+}
+}
+@media (max-width: 420px) {
+.close-video-modal {
+  width: 30px;
+  height: 30px;
+  top: -15%;
+  right: 0;
+
+}
+.close-video-modal:before{
+  font-size: 120%;
+  line-height: 0.7;
+}
+}
+@media (max-width: 640px) {
+	.video-modal-content {
+		width: calc(100% - 16px);
+	}
 }
