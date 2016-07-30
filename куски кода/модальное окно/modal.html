@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="UTF-8">
+	    <title>Modal Window</title>
+        <link href="modal_order_form.css" rel="stylesheet" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="remodal.min.js"></script>
+        <script src="script.js"></script>
+   </head>
+    <body>
+        <div><p><a href="#modal">НАЖМИ</a></p></div>
+        <div class="remodal" data-remodal-id="modal" role="dialog" aria-labelledby="modal1Title" aria-describedby="modal1Desc">
+        <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+        <form id="form">
+        <h2 id="modal1Title">Оставьте ваши контактные данные 
+        <br>и мы свяжимся<br>с вами</h2>
+        <input type="text" class="putName" name="name" placeholder="Ваше ваше имя" required>
+        <input name="phone" type="tel" class="putPhone" placeholder="Введите номер телефона" required>
+        <input type="submit" name="submit" class="btn" value="ОТПРАВИТЬ">
+        <input type="hidden" name="formData" value="Заявка с сайта">
+    </form>
+    </div>
+    </body>
+</html>
