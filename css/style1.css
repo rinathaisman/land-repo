@@ -1681,6 +1681,8 @@ form input[type="submit"] {
     /*border: 2px solid red;*/
 }
 
+
+
 /* using a 16:9 image to resize the video frame */
 .video-sizer {
 	display: block;
@@ -2008,26 +2010,26 @@ COLOR CODE:  #0cb4ce
   outline: 0;
   background: transparent;
   top: -7%;
-  right: 0;
+  right: -0.5%;
 
 }
 .close-video-modal:hover{
     color: white;
 }
-.close-video-modal:before{
-  font-size: 180%;
-  line-height: 1;
-  position: absolute;
- border: 1px solid white;
+.close-video-modal:before {
+    font-size: 35px;
+    line-height: 1.2;
+    position: absolute;
+    border: 2px solid white;
     border-radius: 50%;
-  display: block;
-  width: 90%;
+    display: block;
+    width: 90%;
     height: 90%;
-  content: "\00d7";
-  text-align: center;
-    font-family: 'Roboto', sans-serif;
+    content: "\00d7";
+    text-align: center;
+    font-family: 'Open sans', sans-serif;
+    /* font-weight: 500; */
 }
-
 
 /* using a 16:9 image to resize the video frame */
 .video-sizer {
